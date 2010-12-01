@@ -1,3 +1,5 @@
+%define _disable_ld_no_undefined 1
+
 Name: pvpgn
 Version: 199.r577
 Release: %mkrel 1
@@ -41,7 +43,6 @@ install -d -m755 %{buildroot}/etc/pvpgn
 install -d -m755 %{buildroot}/etc/rc.d/init.d
 install -d -m755 %{buildroot}/var/log/pvpgn
 install -d -m750 %{buildroot}/etc/logrotate.d
-%make DESTDIR="%{buildroot}" install -C build
 install -m755 %{SOURCE1} %{buildroot}%{_sysconfdir}/rc.d/init.d/pvpgn
 install -m640 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/pvpgn
 mkdir -p -m755 %{buildroot}/var/run/%{name}
