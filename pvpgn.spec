@@ -31,20 +31,17 @@ This build of PvPGN is linked with MySQL and SQLite3 libraries.
 %patch1 -p0
 
 %build
-cmake \
--D APPLICATION_NAME=pvpgn \
--D CMAKE_INSTALL_PREFIX=/usr \
--D EXEC_INSTALL_PREFIX=/usr \
--D WITH_MYSQL=true ./
+%cmake -DAPPLICATION_NAME=pvpgn -DWITH_MYSQL=true
+%make
 
 %install
 rm -fr %{buildroot}
-%makeinstall
+%makeinstall_std -C build
 install -d -m755 %{buildroot}/etc/pvpgn
 install -d -m755 %{buildroot}/etc/rc.d/init.d
 install -d -m755 %{buildroot}/var/log/pvpgn
 install -d -m750 %{buildroot}/etc/logrotate.d
-%make DESTDIR="%{buildroot}" install
+%make DESTDIR="%{buildroot}" install -C build
 install -m755 %{SOURCE1} %{buildroot}%{_sysconfdir}/rc.d/init.d/pvpgn
 install -m640 %{SOURCE2} %{buildroot}%{_sysconfdir}/logrotate.d/pvpgn
 mkdir -p -m755 %{buildroot}/var/run/%{name}
