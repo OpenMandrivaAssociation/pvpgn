@@ -1,4 +1,4 @@
-%define _disable_ld_no_undefined 1
+#define _disable_ld_no_undefined 1
 
 Name: pvpgn
 Version: 199.r577
@@ -33,12 +33,15 @@ This build of PvPGN is linked with MySQL and SQLite3 libraries.
 %patch1 -p0
 
 %build
-%cmake -DAPPLICATION_NAME=pvpgn -DWITH_MYSQL=true
+cmake -DAPPLICATION_NAME=pvpgn -DWITH_MYSQL=true \
+-D CMAKE_INSTALL_PREFIX=/usr \
+-D EXEC_INSTALL_PREFIX=/usr ./
+
 %make
 
 %install
 rm -fr %{buildroot}
-%makeinstall_std -C build
+%makeinstall_std
 install -d -m755 %{buildroot}/etc/pvpgn
 install -d -m755 %{buildroot}/etc/rc.d/init.d
 install -d -m755 %{buildroot}/var/log/pvpgn
