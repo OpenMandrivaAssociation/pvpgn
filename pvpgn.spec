@@ -15,6 +15,7 @@ Patch1: DefineInstallationPaths.cmake.patch
 Patch2: pvpgn-fix-bnet-deletion.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 BuildRequires: MySQL-devel libpcap-devel libsqlite3-devel zlib-devel
+BuildRequires: cmake
 
 %description
 PvPGN is a BNETD mod which aims to provide support for all Blizzard clients (thus it supports all BNETD supported clients plus the most recent ones).
