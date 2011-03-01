@@ -2,7 +2,7 @@
 
 Name: pvpgn
 Version: 199.r577
-Release: %mkrel 1
+Release: %mkrel 2
 Summary: PvPGN is a BNETD mod which aims to provide support for all Blizzard clients
 License: GPLv2
 Group: Games/Other
