@@ -2,7 +2,7 @@
 
 Name: pvpgn
 Version: 199.r577
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: PvPGN is a BNETD mod which aims to provide support for all Blizzard clients
 License: GPLv2
 Group: Games/Other
@@ -60,8 +60,8 @@ install -d -m755 %{buildroot}/etc/pvpgn
 install -d -m755 %{buildroot}/etc/rc.d/init.d
 install -d -m755 %{buildroot}/var/log/pvpgn
 install -d -m750 %{buildroot}/etc/logrotate.d
-install -m755 %{SOURCE2} %{buildroot}%{_sysconfdir}/rc.d/init.d/pvpgn
-install -m640 %{SOURCE3} %{buildroot}%{_sysconfdir}/logrotate.d/pvpgn
+install -m755 %{SOURCE3} %{buildroot}%{_sysconfdir}/rc.d/init.d/pvpgn
+install -m640 %{SOURCE4} %{buildroot}%{_sysconfdir}/logrotate.d/pvpgn
 mkdir -p -m755 %{buildroot}/var/run/%{name}
 
 # support files
