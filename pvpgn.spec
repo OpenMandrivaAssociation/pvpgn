@@ -2,7 +2,7 @@
 
 Name: pvpgn
 Version: 199.r577
-Release: %mkrel 4
+Release: %mkrel 5
 Summary: PvPGN is a BNETD mod which aims to provide support for all Blizzard clients
 License: GPLv2
 Group: Games/Other
@@ -13,8 +13,9 @@ Source3: %{name}.init
 Source4: %{name}.logrotate
 Patch1: DefineInstallationPaths.cmake.patch
 Patch2: pvpgn-fix-bnet-deletion.patch
+Patch3: pvpgn-build-static-lib.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}
-BuildRequires: mysql-devel libpcap-devel libsqlite3-devel zlib-devel
+BuildRequires: mysql-devel libpcap-devel zlib-devel
 BuildRequires: cmake
 
 %description
@@ -37,17 +38,15 @@ This build of PvPGN is linked with MySQL and SQLite3 libraries.
 tar xzf %{SOURCE2}
 %patch1 -p0
 %patch2 -p0
+%patch3 -p0
 
 %build
-cmake -DAPPLICATION_NAME=pvpgn -DWITH_MYSQL=true \
--D CMAKE_INSTALL_PREFIX=/usr \
--D EXEC_INSTALL_PREFIX=/usr ./
-
+%cmake -DWITH_MYSQL=ON
 %make
 
 %install
 rm -fr %{buildroot}
-%makeinstall_std
+%makeinstall_std -C build
 install -d -m755 %{buildroot}/etc/pvpgn
 install -d -m755 %{buildroot}/etc/rc.d/init.d
 install -d -m755 %{buildroot}/var/log/pvpgn
