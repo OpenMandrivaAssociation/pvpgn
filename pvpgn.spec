@@ -31,14 +31,6 @@ The list of supported clients and their minimum verion required is:
 
 This build of PvPGN is linked with MySQL and SQLite3 libraries.
 
-%package support
-Requires: pvpgn
-Group: Games/Other
-Summary: PvPGN is a BNETD mod which aims to provide support for all Blizzard clients
-
-%description support
-These are the support files required for PvPGN
-
 
 %prep
 %setup -q
@@ -66,7 +58,7 @@ mkdir -p -m755 %{buildroot}/var/run/%{name}
 
 # support files
 mkdir -p %{buildroot}%{_var}/lib/pvpgn/files/
-cp -r %{name}-support-%{support_version} %{buildroot}%{_var}/lib/pvpgn/files/
+cp -r %{name}-support-%{support_version}/* %{buildroot}%{_var}/lib/pvpgn/files/
 
 %clean
 rm -fr %{buildroot}
@@ -88,7 +80,3 @@ rm -fr %{buildroot}
 %attr(750,pvpgn,pvpgn) %dir %{_logdir}/%{name}
 %attr(750,pvpgn,pvpgn) %dir /var/run/%{name}
 %attr(750,pvpgn,pvpgn) %dir /var/lib/%{name}
-
-%files support
-%defattr(-,root,root)
-%{_var}/lib/%{name}/*
