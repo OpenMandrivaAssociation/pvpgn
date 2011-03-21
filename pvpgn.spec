@@ -14,7 +14,7 @@ Source4: %{name}.logrotate
 Patch1: DefineInstallationPaths.cmake.patch
 Patch2: pvpgn-fix-bnet-deletion.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}
-BuildRequires: MySQL-devel libpcap-devel libsqlite3-devel zlib-devel
+BuildRequires: mysql-devel libpcap-devel libsqlite3-devel zlib-devel
 BuildRequires: cmake
 
 %description
