@@ -1,0 +1,9 @@
+--- pvpgn-support-1.3/bnserver-WAR3.ini	2008-09-11
++++ pvpgn-support-1.3/bnserver-WAR3.ini	2008-09-10
+@@ -1,5 +1,5 @@
+ [Server List Version]
+-VER=1007
++VER=1001
+ 
+ [Server Gateways]
+ 1=uswest.battle.net
