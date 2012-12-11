@@ -79,3 +79,33 @@ rm -fr %{buildroot}
 %attr(750,pvpgn,pvpgn) %dir %{_logdir}/%{name}
 %attr(750,pvpgn,pvpgn) %dir /var/run/%{name}
 %attr(750,pvpgn,pvpgn) %dir /var/lib/%{name}
+
+
+%changelog
+* Mon Mar 21 2011 Funda Wang <fwang@mandriva.org> 199.r577-5mdv2011.0
++ Revision: 647324
+- fix build with default cmake build options
+
+  + zamir <zamir@mandriva.org>
+    - fix deps
+    - fix locate support files
+    - fix spec and init file
+    - fix logrotate file
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - relink against libmysqlclient.so.18
+
+* Thu Dec 02 2010 Eugeni Dodonov <eugeni@mandriva.com> 199.r577-1mdv2011.0
++ Revision: 604720
+- Add pvpgn-support files.
+- Add URL for pvpgn-support
+- Add BR for cmake.
+  Build pvpgn-support as well.
+- Fix build.
+- Use %%cmake macro
+
+  + zamir <zamir@mandriva.org>
+    - small fix build
+    - first build
+    - Created package structure for pvpgn.
+

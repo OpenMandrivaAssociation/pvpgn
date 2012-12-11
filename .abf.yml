@@ -1,5 +1,3 @@
 sources:
-  "pvpgn-199.r577.tar.bz2:"	7f80b30a80fcfdb41d63933fb06d9bc5b162f8d4
-  "pvpgn.init:"	52e38cf12c4b0eda547b1ea1ea86cf967bd06e3a
-  "pvpgn.logrotate:"	6bb80c751af6524877b702b1543ec95b6ba85869
-  "pvpgn-support-1.3.tar.gz:"	7eec6b75954af780406c603aa41cea929dc34936
+  "pvpgn-199.r577.tar.bz2": 7f80b30a80fcfdb41d63933fb06d9bc5b162f8d4
+  "pvpgn-support-1.3.tar.gz": 7eec6b75954af780406c603aa41cea929dc34936

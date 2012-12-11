@@ -1,0 +1,9 @@
+/var/log/pvpgn/*.log {
+	daily
+	rotate 7
+	compress
+	create 660 pvpgn pvpgn
+	postrotate
+		/usr/bin/killall -HUP bnetd
+	endscript
+}
