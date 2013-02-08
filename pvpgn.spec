@@ -2,7 +2,7 @@
 
 Name: pvpgn
 Version: 199.r577
-Release: %mkrel 5
+Release: 6
 Summary: PvPGN is a BNETD mod which aims to provide support for all Blizzard clients
 License: GPLv2
 Group: Games/Other
@@ -19,7 +19,8 @@ BuildRequires: mysql-devel libpcap-devel zlib-devel
 BuildRequires: cmake
 
 %description
-PvPGN is a BNETD mod which aims to provide support for all Blizzard clients (thus it supports all BNETD supported clients plus the most recent ones).
+PvPGN is a BNETD mod which aims to provide support for all Blizzard clients
+(thus it supports all BNETD supported clients plus the most recent ones).
 The list of supported clients and their minimum verion required is:
 - Diablo 1 v1.09
 - Starcraft v1.08
@@ -45,7 +46,6 @@ tar xzf %{SOURCE2}
 %make
 
 %install
-rm -fr %{buildroot}
 %makeinstall_std -C build
 install -d -m755 %{buildroot}/etc/pvpgn
 install -d -m755 %{buildroot}/etc/rc.d/init.d
