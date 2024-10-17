@@ -6,7 +6,7 @@ Release: 7
 Summary: PvPGN is a BNETD mod which aims to provide support for all Blizzard clients
 License: GPLv2
 Group: Games/Other
-Url: http://pvpgn.berlios.de
+Url: https://pvpgn.berlios.de
 Source: http://download.berlios.de/pvpgn/%{name}-%{version}.tar.bz2
 Source2: http://download.berlios.de/pvpgn/%{name}-support-%{support_version}.tar.gz
 Source3: %{name}.init
